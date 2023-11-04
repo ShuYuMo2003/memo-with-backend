@@ -1,2 +1,5 @@
 bad_request = "BAD_REQUEST"
 no_such_person_id = "NO_SUCH_PERSON_ID"
+no_such_person_name = "NO_SUCH_PERSON_NAME"
+bad_photo = "BAD_PHOTO"
+bad_token = "BAD_TOKEN"
