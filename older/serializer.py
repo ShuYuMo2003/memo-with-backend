@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import GENDER_TYPE, Person
 
 class GetPersonInfoRequestSerializer(serializers.Serializer):
-    name                = serializers.CharField(max_length=100)
+    name                = serializers.CharField(max_length=100, required=False, allow_null=True, allow_blank=True)
 
 class SaveOrUpdatePersonInfoRequestSerializer(serializers.Serializer):
     token               = serializers.CharField()

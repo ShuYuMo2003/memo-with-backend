@@ -49,8 +49,13 @@ def upload_file(request):
 class ShowPersonInfo(MemoBaseAPIView):
     serializer_class = GetPersonInfoRequestSerializer
     def post(self, request):
-        name = request.serializer.data['name']
-        instances = Person.objects.filter(name__icontains=name, is_public=True)
+        d = request.serializer.data
+        if d.get('name'):
+            name = request.serializer.data['name']
+            instances = Person.objects.filter(name__icontains=name, is_public=True)
+        else:
+            name = ''
+            instances = Person.objects.filter(is_public=True)
 
         if not instances:
             return self.fuck(no_such_person_name, f'\'{name}\' is not in the database.')
