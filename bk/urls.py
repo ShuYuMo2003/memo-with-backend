@@ -21,10 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('show_person_info/', ShowPersonInfo.as_view()),
-    path('save_or_update_person_info/', SaveOrUpdatePersonInfo.as_view()),
-    path('set_public/', SetPublic.as_view()),
-    path('get_all_person/', GetAllPerson.as_view()),
-    path('upload_file/', upload_file),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('api/admin/', admin.site.urls),
+    path('api/show_person_info/', ShowPersonInfo.as_view()),
+    path('api/save_or_update_person_info/', SaveOrUpdatePersonInfo.as_view()),
+    path('api/set_public/', SetPublic.as_view()),
+    path('api/get_all_person/', GetAllPerson.as_view()),
+    path('api/upload_file/', upload_file),
+]#  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
